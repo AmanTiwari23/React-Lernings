@@ -1,3 +1,4 @@
+import Hello from "./Hello";
 const data = (
   <ul>
     <li>php</li>
@@ -24,6 +25,7 @@ const App = () => {
         accusantium tenetur distinctio sed quibusdam magni!
       </p>
       <img src="#" alt="this is an image" />
+      <Hello name="Aman Tiwari" age="24" city="Satna" currcity="Bhopal"></Hello>
     </>
   );
 };
