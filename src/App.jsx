@@ -1,12 +1,14 @@
 
-import Satna from "./Satna";
+import Header from "./Header";
+import Data from "./Data";
 
 
 const App = () => {
   return (
     <>
-
-     <Satna/>
+    <Header/>
+    <Data/>
+     
     </>
   );
 };
