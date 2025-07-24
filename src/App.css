@@ -1,0 +1,10 @@
+body{
+    background-color: aqua;
+}
+
+.box{
+
+    display: flex;
+    gap: 2px;
+    justify-content: space-evenly;
+}
