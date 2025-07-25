@@ -1,28 +1,24 @@
+import { useState } from "react";
 import "./App.css";
+import College, { Course, Fees } from "./assets/Cybrom";
 
 
 const App = () => {
 
-  const display=()=>{
-       alert("welcome to cybrome");
-  }
-  const myval = (e)=>{
-    let mytype = e.type;
-    let myvalue= e.target.value;
-    let mynm = e.target.name;
-    alert(`type = ${mytype}, Value = ${myvalue} , Name = ${mynm}`);
+  const [name,setName] = useState("Tushar!");
+  const [color,setColor] = useState("red");
 
-  }
-  const name = (fnm,snm,e)=>{
-    console.log(e);
-    alert(e.type);
+  const myname = ()=>{
+    setName("Aman Tiwari");
   }
   return (
     <>
-      <h1>react +Vite</h1>
-      <button onClick={display}>welcome</button>
-      <button value="button hai ek " name="btn" onClick={myval}>name</button>
-
+     <h1 style={{color:color}}>My favrouit color is : {color}</h1>
+     <button onClick={()=>{setColor("blue")}}>blue</button>
+     <button onClick={()=>{setColor("green")}}>green</button>
+     <button onClick={()=>{setColor("yellow")}}>yellow</button>
+     <button onClick={()=>{setColor("pink")}}>pink</button>
+     <button onClick={()=>{setColor("orange")}}>orange</button>
     </>
   );
 };
