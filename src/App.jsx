@@ -6,31 +6,31 @@ import College, { Course, Fees } from "./assets/Cybrom";
 const App = () => {
 
   const [name,setName] = useState("Tushar!");
-  const [color,setColor] = useState("red");
+  const [multi,setMulti] = useState(0);
 
   const [count,setCount] = useState(0);
 
   useEffect(()=>{
-    setTimeout(()=>{
-   setCount(count+1);
-    },3000)
-  },[])
+    
+   setMulti(count*2);
+    
+  },[count])
 
-  const decrement=()=>{
-    if(count<=1){
-      alert("no decrement")
-    }else{
-      setCount(count-1);
-    }
-  }
-  const myname = ()=>{
-    setName("Aman Tiwari");
-  }
+  // const decrement=()=>{
+  //   if(count<=1){
+  //     alert("no decrement")
+  //   }else{
+  //     setCount(count-1);
+  //   }
+  // }
+  // const myname = ()=>{
+  //   setName("Aman Tiwari");
+  // }
   return (
     <>
-     <button onClick={()=>{setCount(count+1)}}>Increment</button>
-     <h1>{count}</h1>
-     <button onClick={()=>{decrement()}}>decrement</button>
+    <h1>count value :{count}</h1>
+    <button onClick={()=>{setCount(count+1)}}>increment</button>
+    <h1>Multiplication value: {multi}</h1>
     </>
   );
 };
