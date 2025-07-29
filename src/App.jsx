@@ -4,17 +4,23 @@ import College, { Course, Fees } from "./assets/Cybrom";
 
 
 const App = () => {
+  const [name,setName]= useState("");
+  const [city,setCity]= useState("");
 
-  const [name,setName] = useState("Tushar!");
-  const [multi,setMulti] = useState(0);
+  const handleSave = ()=>{
+    console.log({name:name,city:city});
+  }
 
-  const [count,setCount] = useState(0);
+  // const [name,setName] = useState("Tushar!");
+  // const [multi,setMulti] = useState(0);
 
-  useEffect(()=>{
+  // const [count,setCount] = useState(0);
+
+  // useEffect(()=>{
     
-   setMulti(count*2);
+  //  setMulti(count*2);
     
-  },[count])
+  // },[count])
 
   // const decrement=()=>{
   //   if(count<=1){
@@ -28,9 +34,10 @@ const App = () => {
   // }
   return (
     <>
-    <h1>count value :{count}</h1>
-    <button onClick={()=>{setCount(count+1)}}>increment</button>
-    <h1>Multiplication value: {multi}</h1>
+    <h1>Application form</h1>
+    Enter name: <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} />
+    Enter City: <input type="text" value={city} onChange={(e)=>{setCity(e.target.value)}} />
+    <button onClick={handleSave}>Save!!</button>
     </>
   );
 };
