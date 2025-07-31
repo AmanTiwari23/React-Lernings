@@ -4,11 +4,14 @@ import College, { Course, Fees } from "./assets/Cybrom";
 
 
 const App = () => {
-  const [name,setName]= useState("");
-  const [city,setCity]= useState("");
+  const [input,setInput] = useState({});
 
-  const handleSave = ()=>{
-    console.log({name:name,city:city});
+
+  const handleSave = (e)=>{
+    let name = e.target.name;
+    let value = e.target.value;
+    setInput(values => ({...values,[name]:value}));
+    console.log(input);
   }
 
   // const [name,setName] = useState("Tushar!");
@@ -35,11 +38,13 @@ const App = () => {
   return (
     <>
     <h1>Application form</h1>
-    Enter name: <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} />
-    Enter City: <input type="text" value={city} onChange={(e)=>{setCity(e.target.value)}} />
+    Enter EmpID : <input type="text" name="empId" onChange={handleSave} />
+    Enter Employename: <input type="text" name="empName" onChange={handleSave} />
+    Enter employeCity: <input type="text" name="City" onChange={handleSave} />
+    Enter Salary : <input type="text" name="Salary" onChange={handleSave} />
     <button onClick={handleSave}>Save!!</button>
     </>
-  );
+  ); 
 };
 
 export default App;
