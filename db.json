@@ -1,0 +1,10 @@
+{
+    "students" : [
+        {
+            "rollno":101,
+            "name":"aman",
+             "city":"satna",
+             "fees":1223231
+        }
+    ]
+}
