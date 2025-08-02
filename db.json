@@ -1,10 +1,60 @@
 {
-    "students" : [
-        {
-            "rollno":101,
-            "name":"aman",
-             "city":"satna",
-             "fees":1223231
-        }
-    ]
+  "students": [
+    {
+      "rollno": 101,
+      "name": "aman",
+      "city": "satna",
+      "fees": 1223231,
+      "id": "8b64"
+    },
+    {
+      "id": "a1b4",
+      "roll": "Vashu",
+      "name": "Mishra",
+      "city": "Satna",
+      "Salary": "55000"
+    },
+    {
+      "id": "4bf6",
+      "roll": "234",
+      "name": "anuj",
+      "city": "satna",
+      "Salary": "1000000000"
+    },
+    {
+      "id": "fa16",
+      "roll": "234",
+      "name": "anuj",
+      "city": "satna",
+      "Salary": "1000000000"
+    },
+    {
+      "id": "5264",
+      "roll": "234",
+      "name": "anuj",
+      "city": "satna",
+      "Salary": "1000000000"
+    },
+    {
+      "id": "fb3b",
+      "roll": "234",
+      "name": "anuj",
+      "city": "satna",
+      "Salary": "1000000000"
+    },
+    {
+      "id": "2f66",
+      "roll": "234",
+      "name": "anuj",
+      "city": "satna",
+      "Salary": "1000000000"
+    },
+    {
+      "id": "3684",
+      "roll": "301",
+      "name": "anuj",
+      "city": "rewa",
+      "Salary": "3000000"
+    }
+  ]
 }

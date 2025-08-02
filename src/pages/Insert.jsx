@@ -1,5 +1,7 @@
 import { useState } from "react";
-
+import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+ import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -19,7 +21,7 @@ const Insert = () => {
     const api = "http://localhost:3000/students";
     const response = await axios.post(api,input);
     console.log(response);
-
+       toast.success("successful", { autoClose: 3000 });
 
   }
 
@@ -32,6 +34,9 @@ const Insert = () => {
     Enter City: <input type="text" name="city" onChange={handleInput} /> <br />
     Enter Fees : <input type="text" name="Salary" onChange={handleInput} /> <br />
     <button onClick={handleSubmit}>Save!!</button>
+    <ToastContainer />
+   
+
     </>
   ); 
 };

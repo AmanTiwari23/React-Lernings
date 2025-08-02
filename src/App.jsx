@@ -1,5 +1,10 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route , Routes } from "react-router-dom";
 import Layout from "./Layout";
+import Update from "./pages/Update";
+import Insert from "./pages/Insert";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const App = ()=>{
     return(
@@ -9,6 +14,11 @@ const App = ()=>{
             <Route path="/" element = {<Layout/>}>
              <Route index element={<Home/>}/>
              <Route path="about" element={<About/>}/>
+             <Route path="home" element={<Home/>}/>
+             <Route path="contact" element={<Contact/>}/>
+             <Route path="update" element={<Update/>}/>
+             <Route path="insert" element={<Insert/>}/>
+
 
             </Route>
         </Routes>
