@@ -32,7 +32,7 @@ const Insert = () => {
     Enter RollNo : <input type="text" name="roll" onChange={handleInput} /> <br />
     Enter Name: <input type="text" name="name" onChange={handleInput} /> <br />
     Enter City: <input type="text" name="city" onChange={handleInput} /> <br />
-    Enter Fees : <input type="text" name="Salary" onChange={handleInput} /> <br />
+    Enter Fees : <input type="text" name="fees" onChange={handleInput} /> <br />
     <button onClick={handleSubmit}>Save!!</button>
     <ToastContainer />
    
