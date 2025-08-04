@@ -1,6 +1,5 @@
 {
   "students": [
-    
     {
       "id": "4bf6",
       "roll": "234",
@@ -42,13 +41,6 @@
       "name": "anuj",
       "city": "rewa",
       "fees": "3000000"
-    },
-    {
-      "id": "3a95",
-      "roll": "101",
-      "name": "aman",
-      "city": "satna",
-      "fees": "100000"
     }
   ]
 }
