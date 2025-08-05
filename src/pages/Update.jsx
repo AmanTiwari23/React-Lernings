@@ -47,15 +47,25 @@ const Update = () => {
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
-  }
+    if(editId !== null){
+      let api = `http://localhost:3000/students/${editId}`;
+      await axios.put(api,formData);
+      alert("Record Updated!");
+      setEditId(null)
+      setFormData({roll:"",name:"",city:"",fees:""});
+      loadData();
+    }
+  };
+
+
   useEffect(() => {
     loadData();
   }, []);
 
   const ans = myData.map((item) => {
     return (
-      <>
-        <tr>
+      
+        <tr key={item.id}>
           <td>{item.roll}</td>
           <td>{item.name}</td>
           <td>{item.city}</td>
@@ -79,7 +89,7 @@ const Update = () => {
             </button>
           </td>
         </tr>
-      </>
+      
     );
   });
 
@@ -93,6 +103,7 @@ const Update = () => {
           name="roll"
           placeholder="Roll No"
           value={formData.roll}
+          onChange={handleChange}
         />
 
          <input
@@ -100,6 +111,7 @@ const Update = () => {
           name="name"
           placeholder="Name"
           value={formData.name}
+          onChange={handleChange}
         />
 
          <input
@@ -107,6 +119,7 @@ const Update = () => {
           name="city"
           placeholder="City"
           value={formData.city}
+          onChange={handleChange}
         />
 
          <input
@@ -114,6 +127,7 @@ const Update = () => {
           name="fees"
           placeholder="Fees"
           value={formData.fees}
+          onChange={handleChange}
         />
 
         <button type="submit">
@@ -122,7 +136,8 @@ const Update = () => {
 
       </form>
       <table border="1" width="700">
-        <tr>
+        <thead>
+          <tr>
           <th>Roll no</th>
           <th>Name</th>
           <th>City</th>
@@ -130,7 +145,12 @@ const Update = () => {
           <th></th>
           <th></th>
         </tr>
-        {ans}
+        </thead>
+        <tbody>
+          {ans}
+        </tbody>
+        
+        
       </table>
     </>
   );
