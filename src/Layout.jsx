@@ -8,7 +8,8 @@ const Layout = ()=>{
           <Link to="contact">Contact</Link>  |
           <Link to="insert">Insert</Link>   |
           <Link to="update">Update</Link>  |
-          <Link to="display">Display</Link>
+          <Link to="display">Display</Link>  |
+         
           <hr size="3" color="red"/>
            <Outlet/>
           <hr size="3" color="red"/>

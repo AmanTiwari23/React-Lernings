@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Display from "./pages/Display";
+import MyEdit from "./pages/MyEdit";
 
 const App = ()=>{
     return(
@@ -20,7 +21,7 @@ const App = ()=>{
              <Route path="update" element={<Update/>}/>
              <Route path="insert" element={<Insert/>}/>
              <Route path="display" element={<Display/>}/>
-
+             <Route path="myedit/:id" element={<MyEdit/>}/>
 
             </Route>
         </Routes>

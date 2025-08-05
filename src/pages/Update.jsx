@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Update = () => {
   const [myData, setMyData] = useState([]);
@@ -13,17 +14,19 @@ const Update = () => {
     fees:""
   });
 
+  const navigate = useNavigate();
+
   const loadData = async () => {
     const api = "http://localhost:3000/students";
     const response = await axios.get(api);
-    console.log(response.data);
+    
     setMyData(response.data);
   };
 
   const myDel = async (id) => {
     let api = `http://localhost:3000/students/${id}`;
     const response = await axios.delete(api);
-    console.log(response);
+    
     alert("Record Deleted !!");
     loadData();
   };
@@ -57,6 +60,9 @@ const Update = () => {
     }
   };
 
+  const myEdit = (id)=>{
+   navigate(`/myedit/${id}`);
+  }
 
   useEffect(() => {
     loadData();
@@ -85,9 +91,12 @@ const Update = () => {
                 myUpdate(item);
               }}
             >
-              Edit
+              Edit here
             </button>
+
+
           </td>
+          <td> <button onClick={()=>{ myEdit(item.id)}}>Edit in new page</button></td>
         </tr>
       
     );
