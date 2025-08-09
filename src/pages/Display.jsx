@@ -13,8 +13,8 @@ const Display = () => {
     
   }
 
-  useEffect(()=>{
-    loadData();
+  useEffect( ()=>{
+     loadData();
   },[]);
 
   const ans = myData.map((key) => {
