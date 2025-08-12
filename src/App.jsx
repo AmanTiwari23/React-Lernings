@@ -7,6 +7,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Display from "./pages/Display";
 import MyEdit from "./pages/MyEdit";
+import Search from "./pages/Search";
+
 
 const App = ()=>{
     return(
@@ -22,6 +24,7 @@ const App = ()=>{
              <Route path="insert" element={<Insert/>}/>
              <Route path="display" element={<Display/>}/>
              <Route path="myedit/:id" element={<MyEdit/>}/>
+             <Route path="search" element={<Search/>}/>
 
             </Route>
         </Routes>

@@ -9,7 +9,7 @@ const Layout = ()=>{
           <Link to="insert">Insert</Link>   |
           <Link to="update">Update</Link>  |
           <Link to="display">Display</Link>  |
-         
+         <Link to="search">Search</Link>
           <hr size="3" color="red"/>
            <Outlet/>
           <hr size="3" color="red"/>
