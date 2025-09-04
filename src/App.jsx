@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addTask } from './todoSlice';
+import { addTask,taskDelete,taskComplete,taskIncomplete} from './todoSlice';
 
 const App = () => {
 
@@ -12,7 +12,7 @@ const App = () => {
   const myTask = useSelector(store => store.mytodo.task)
 
   const handlesubmit = () =>{
-     dispatch(addTask({id:Date.now(),work:txtval}))
+     dispatch(addTask({id:Date.now(),work:txtval,status:false}));
   }
 
   let sno = 0;
@@ -22,7 +22,14 @@ const App = () => {
     return(
       <tr>
         <td>{sno}</td>
-        <td>{key.work}</td>
+        <td>
+          
+          {key.status ? <> <span style={{color:"red",textDecoration:"line-through"}}>{key.work}</span></> :<> {key.work}</>}
+          
+          </td>
+        <td><button onClick={()=>{dispatch(taskDelete({id:key.id}))}} >Delete</button> </td>
+        <td><button onClick={()=>{dispatch(taskComplete({id:key.id}))}}>Complete</button></td>
+        <td><button onClick={()=>{dispatch(taskIncomplete({id:key.id}))}}>Incomplete</button></td>
       </tr>
     )
   })
@@ -40,6 +47,10 @@ const App = () => {
       <tr>
         <th>Sno</th>
         <th>Task</th>
+        <td> </td>
+        <td></td>
+        <td> </td>
+
       </tr>
      </thead>
      <tbody>
