@@ -1,20 +1,56 @@
-import {useSelector,useDispatch} from "react-router";
-import {colorChange} from "./colorSlice";
-import { useState } from "react";
 
-const App = ()=>{
-  const myclr = useSelector(state => state.mycolor.color);
+
+
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { addTask } from './todoSlice';
+
+const App = () => {
+
+  const[txtval,setTextValue] = useState("");
   const dispatch = useDispatch();
-  const [txtval, setTxtVal] = useState("");
-    
+  const myTask = useSelector(store => store.mytodo.task)
+
+  const handlesubmit = () =>{
+     dispatch(addTask({id:Date.now(),work:txtval}))
+  }
+
+  let sno = 0;
+
+  const ans = myTask.map((key)=>{
+    sno++;
     return(
-        <>
-        <h1>welcome</h1>
-        Enter color: <input type="text" onChange={(e)=>{setTxtVal(e.target.value)}}/>
-        <button onClick={()=>{dispatch(colorChange(txtval))}}>Click here !</button>
-        <div style={{width:"400px", height:"200px", backgroundColor:myclr}}></div>
-        </>
+      <tr>
+        <td>{sno}</td>
+        <td>{key.work}</td>
+      </tr>
     )
+  })
+
+  return (
+    <>
+    <h1>To Do List</h1>
+   <hr />
+    Enter your task : <input type='text' value={txtval} onChange={(e)=>{setTextValue(e.target.value)}}/> 
+    <button onClick={handlesubmit}>Add task</button>
+
+    <table border="2" width="200px" >
+
+     <thead >
+      <tr>
+        <th>Sno</th>
+        <th>Task</th>
+      </tr>
+     </thead>
+     <tbody>
+      {ans}
+     </tbody>
+
+    </table>
+
+
+    </>
+  )
 }
 
-export default App;
+export default App
