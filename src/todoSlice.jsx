@@ -28,11 +28,20 @@ const todoSlice = createSlice({
         },
         taskIncomplete :(state,action)=>{
             for(let i = 0; i<state.task.length; i++){
-                
+                if(state.task[i].id == action.payload.id){
+                    state.task[i].status = false;
+                }
+            }
+        },
+        edittaskSave :(state,action) =>{
+            for(let i=0; i<state.task.length; i++){
+                if(state.task[i].id == action.payload.id){
+                    state.task[i].work = action.payload.newtask;
+                }
             }
         }
     }
 })
 
-export const {addTask,taskDelete,taskComplete} = todoSlice.actions;
+export const {addTask,taskDelete,taskComplete,taskIncomplete,edittaskSave} = todoSlice.actions;
 export default todoSlice.reducer;
